@@ -1,7 +1,7 @@
 "use client";
 
 const products = [
-  { id: 1, emoji: '🌸', image: '/diaper-pack.png', name: "Kiki Cares® Newborn", desc: "Ultra-soft for 0–3 months. Hypoallergenic & gentle on delicate skin.", price: '₦3,500', stars: 5, reviews: 2847, badge: 'Bestseller', badgeColor: '#FF6B8A', bg: 'linear-gradient(135deg, #E0F5F3, #d0f0ee)', comingSoon: false },
+  { id: 1, emoji: '🌸', image: '/diaper-pack.png', name: "Kiki Cares® Newborn", desc: "Ultra-soft for 0–3 months. Hypoallergenic & gentle on delicate skin.", price: '₦10,500', stars: 5, reviews: 2847, badge: 'Bestseller', badgeColor: '#FF6B8A', bg: 'linear-gradient(135deg, #E0F5F3, #d0f0ee)', comingSoon: false },
   { id: 2, emoji: '🧸', image: null, name: "Kiki Cares® Baby Soft", desc: "Triple-layer absorbent core. Keeps skin dry all day and night.", price: '₦4,200', stars: 5, reviews: 1923, badge: null, bg: 'linear-gradient(135deg, #FFF0F3, #ffd6df)', comingSoon: false },
   { id: 3, emoji: '🌈', image: null, name: "Kiki Cares® Active Fit", desc: "HuggFit 360 stretch for toddlers who never stop moving.", price: '₦4,800', stars: 5, reviews: 856, badge: null, bg: 'linear-gradient(135deg, #EBF4FF, #d0e7ff)', comingSoon: true },
   { id: 4, emoji: '🌙', image: null, name: "Kiki Cares® Overnites", desc: "Maximum overnight protection. 3x more absorbent for peaceful nights.", price: '₦5,200', stars: 5, reviews: 1204, badge: null, bg: 'linear-gradient(135deg, #FFF9EC, #ffe8b0)', comingSoon: true },

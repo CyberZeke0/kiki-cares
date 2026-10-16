@@ -10,24 +10,29 @@ export default function Founder() {
         alignItems: 'center',
       }}>
 
-        {/* Left - Image */}
+        {/* Left - Photo */}
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
           <div style={{
             width: '100%',
             maxWidth: '380px',
             aspectRatio: '4/5',
-            background: 'linear-gradient(135deg, #00A699, #007A6E)',
             borderRadius: '28px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '120px',
+            overflow: 'hidden',
             marginBottom: '16px',
           }}>
-            👩🏾
+            <img
+              src="/martha.jpg"
+              alt="Martha Ochei Agoro — Founder of Kiki Cares"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center top',
+              }}
+            />
           </div>
           <div style={{fontSize: '12px', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.08em', textTransform: 'uppercase'}}>
-            Martha Ochei Agoro — Baltimore, Maryland, USA
+            Martha Ochei Agoro — Founder & CEO, Kiki Cares®
           </div>
         </div>
 
@@ -42,45 +47,53 @@ export default function Founder() {
             fontSize: '40px',
             fontWeight: '900',
             color: 'white',
-            marginBottom: '20px',
+            marginBottom: '24px',
             letterSpacing: '-0.5px',
             lineHeight: '1.15',
           }}>
-            Built by a mother,{' '}
-            <span style={{color: '#FFD166'}}>for every mother</span>
+            A Mother's Love in{' '}
+            <span style={{color: '#FFD166'}}>Every Pack</span>
           </h2>
 
           <p style={{
             fontSize: '16px',
-            color: 'rgba(255,255,255,0.7)',
-            lineHeight: '1.8',
-            fontStyle: 'italic',
+            color: 'rgba(255,255,255,0.85)',
+            lineHeight: '1.9',
             marginBottom: '20px',
             borderLeft: '3px solid #00A699',
-            paddingLeft: '18px',
+            paddingLeft: '20px',
+            fontStyle: 'italic',
           }}>
-            "I started Kiki Cares® because I couldn't find a nappy brand that truly understood Nigerian babies. Every baby deserves the very best care — and that's what Kiki Cares® delivers."
+            "Kiki Cares®️ was born from a mother's love and a simple belief: every baby deserves to feel comfortable, protected, and cared for."
           </p>
 
           <p style={{
-            fontSize: '14px',
-            color: 'rgba(255,255,255,0.6)',
+            fontSize: '15px',
+            color: 'rgba(255,255,255,0.65)',
             lineHeight: '1.9',
-            marginBottom: '32px',
+            marginBottom: '16px',
           }}>
-            Martha Ochei Agoro is the founder and CEO of Kiki Cares®, a premium baby care brand she built from the ground up in Baltimore, Maryland, USA. With a deep passion for child wellness and a mother's instinct for quality, Martha created Kiki Cares® to give Nigerian families a product they can truly trust.
+            As a mother, I understand that choosing the right diaper is about more than keeping a baby dry. It's about comfort, confidence, and giving parents peace of mind.
           </p>
 
-          {/* Facts grid */}
+          <p style={{
+            fontSize: '15px',
+            color: 'rgba(255,255,255,0.65)',
+            lineHeight: '1.9',
+            marginBottom: '36px',
+          }}>
+            That is why I created Kiki Cares®️ — to bring families thoughtfully designed baby-care products that combine quality, comfort, and affordability.
+          </p>
+
           <div style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
             gap: '16px',
           }}>
             {[
-              {label: 'Founded', value: '2026, Baltimore MD 🇺🇸'},
+              {label: 'Founded', value: '2026, Baltimore, MD, USA'},
               {label: 'Primary Market', value: 'Nigeria & West Africa'},
-              {label: 'Families Served', value: '50,000+ and growing'},
+              {label: 'Certified', value: 'Dermatologist Tested ✅'},
               {label: 'Powered by', value: '14th Tech ⚡'},
             ].map((fact) => (
               <div key={fact.label} style={{
