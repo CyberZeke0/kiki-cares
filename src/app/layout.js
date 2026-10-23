@@ -1,15 +1,14 @@
+"use client";
 import "./globals.css";
-
-export const metadata = {
-  title: "Kiki Cares® — Trusted Baby Care",
-  description: "Premium baby care for Nigerian families. Hypoallergenic, dermatologist tested nappies and wipes.",
-};
+import { CartProvider } from "@/context/CartContext";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
-        {children}
+        <CartProvider>
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

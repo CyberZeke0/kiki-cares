@@ -71,7 +71,7 @@ export default function Hero() {
           marginBottom: '32px',
           maxWidth: '420px',
         }}>
-          Kiki Cares® nappies are clinically tested, hypoallergenic and engineered for 12-hour leak protection — because every baby deserves the very best.
+          Kiki Cares® Diapers are clinically tested, hypoallergenic and engineered for 12-hour leak protection — because every baby deserves the very best.
         </p>
 
         <div style={{display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '40px'}}>
