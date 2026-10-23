@@ -49,7 +49,7 @@ export function CartProvider({ children }) {
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   const totalPrice = cartItems.reduce((sum, item) => {
-    const price = parseInt(item.price.replace(/[₦,]/g, ''));
+    const price = typeof item.price === 'string' ? parseInt(item.price.replace(/[₦,]/g, '')) : item.price;
     return sum + price * item.quantity;
   }, 0);
 

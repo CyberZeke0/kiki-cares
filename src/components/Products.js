@@ -1,89 +1,213 @@
-"use client";
+'use client';
+
 import { useCart } from '@/context/CartContext';
+import { useState } from 'react';
 
 const products = [
-  { id: 1, emoji: '🌸', image: '/kiki-diaper.jpg', name: "Kiki Cares® Newborn", desc: "Ultra-soft for 0-3 months. Hypoallergenic & gentle on delicate skin.", price: '₦3,500', stars: 5, reviews: 2847, badge: 'Bestseller', badgeColor: '#FF6B8A', bg: 'linear-gradient(135deg, #E0F5F3, #d0f0ee)', comingSoon: false },
-  { id: 2, emoji: '🧸', image: '/feeding-bottle.jpg', name: "Kiki Cares® Baby Soft", desc: "Triple-layer absorbent core. Keeps skin dry all day and night.", price: '₦4,200', stars: 5, reviews: 1923, badge: null, bg: 'linear-gradient(135deg, #FFF0F3, #ffd6df)', comingSoon: false },
-  { id: 3, emoji: '💧', image: '/water-bottle.png', name: "Kiki Cares® Baby Water Bottle", desc: "BPA-free, leak-proof water bottle designed for babies and toddlers.", price: '₦2,500', stars: 5, reviews: 634, badge: null, bg: 'transparent', comingSoon: false },
-  { id: 4, emoji: '🌙', image: null, name: "Kiki Cares® Overnites", desc: "Maximum overnight protection. 3x more absorbent for peaceful nights.", price: '₦5,200', stars: 5, reviews: 1204, badge: null, bg: 'linear-gradient(135deg, #FFF9EC, #ffe8b0)', comingSoon: true },
-  { id: 5, emoji: '🏊', image: null, name: "Kiki Cares® Swim", desc: "Reusable and water-resistant. Perfect for bath time and swimming.", price: '₦2,800', stars: 4, reviews: 634, badge: null, bg: 'linear-gradient(135deg, #F0EEFF, #ddd8ff)', comingSoon: true },
-  { id: 6, emoji: '🧴', image: null, name: "Kiki Cares® Baby Wipes", desc: "99% pure water wipes. Gentle enough for newborn skin from day one.", price: '₦1,800', stars: 5, reviews: 3102, badge: 'Save 20%', badgeColor: '#FF6B8A', bg: 'linear-gradient(135deg, #E0F5F3, #FFF0F3)', comingSoon: false },
-  { id: 7, emoji: '🎀', image: null, name: "Kiki Cares® Pull-Ups", desc: "Training pants with easy pull-up design. Great for potty training.", price: '₦4,500', stars: 5, reviews: 987, badge: null, bg: 'linear-gradient(135deg, #FFF9EC, #EBF4FF)', comingSoon: true },
-  { id: 8, emoji: '📦', image: null, name: "Kiki Cares® Bundle Pack", desc: "Mix & match all sizes and types. A full month of care at one great price.", price: '₦18,000', stars: 5, reviews: 2341, badge: null, bg: 'linear-gradient(135deg, #FFF0F3, #F0EEFF)', comingSoon: true },
+  {
+    id: 1,
+    name: 'Newborn Diapers',
+    price: 14000,
+    description: 'Ultra-soft, 12-hour protection for newborns',
+    image: '/kiki-diaper.jpg',
+    available: true,
+    badge: 'Best Seller',
+  },
+  {
+    id: 2,
+    name: 'Baby Soft Diapers',
+    price: 8000,
+    description: 'Gentle care for sensitive baby skin',
+    image: '/kiki-diaper.jpg',
+    available: true,
+    badge: null,
+  },
+  {
+    id: 3,
+    name: 'Baby Feeding Bottle',
+    price: 4000,
+    description: 'BPA-free, anti-colic system, easy grip design',
+    image: '/feeding-bottle.png',
+    available: true,
+    badge: 'New',
+  },
+  {
+    id: 4,
+    name: 'Baby Water Bottle',
+    price: 3500,
+    description: 'Pure hydration for a healthier tomorrow',
+    image: '/water-bottle.png',
+    available: true,
+    badge: null,
+  },
+  {
+    id: 5,
+    name: 'Baby Wipes (80 pack)',
+    price: 7500,
+    description: 'Hypoallergenic with Aloe Vera & Vitamin E',
+    image: '/baby-wipes.png',
+    available: true,
+    badge: 'Popular',
+  },
+  {
+    id: 6,
+    name: 'Overnites Diapers',
+    price: 1,
+    description: 'Extra protection for peaceful nights',
+    image: '/kiki-diaper.jpg',
+    available: false,
+    badge: null,
+  },
+  {
+    id: 7,
+    name: 'Swim Diapers',
+    price: 1,
+    description: 'Secure fit for water adventures',
+    image: '/kiki-diaper.jpg',
+    available: false,
+    badge: null,
+  },
+  {
+    id: 8,
+    name: 'Pull-Ups',
+    price: 1,
+    description: 'Easy training for active toddlers',
+    image: '/kiki-diaper.jpg',
+    available: false,
+    badge: null,
+  },
 ];
 
 export default function Products() {
   const { addToCart } = useCart();
+  const [added, setAdded] = useState({});
+
+  const handleAdd = (product) => {
+    addToCart(product);
+    setAdded((prev) => ({ ...prev, [product.id]: true }));
+    setTimeout(() => setAdded((prev) => ({ ...prev, [product.id]: false })), 1500);
+  };
 
   return (
-    <section style={{padding: '80px 40px', maxWidth: '1280px', margin: '0 auto'}}>
-      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px'}}>
-        <div>
-          <div style={{fontSize: '11px', fontWeight: '700', color: '#00A699', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px'}}>Our Collection</div>
-          <h2 style={{fontFamily: 'sans-serif', fontSize: '36px', fontWeight: '900', color: '#1A2A35', letterSpacing: '-0.5px', margin: 0}}>Products for every stage</h2>
+    <section style={{ padding: '60px 20px', background: '#fff', fontFamily: 'sans-serif' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <h2 style={{ fontSize: '36px', fontWeight: '800', color: '#1a1a1a', marginBottom: '12px' }}>
+            Our Products
+          </h2>
+          <p style={{ color: '#666', fontSize: '16px' }}>
+            Premium baby care made for African babies
+          </p>
         </div>
-        <a href="#" style={{fontSize: '14px', fontWeight: '700', color: '#00A699', textDecoration: 'none'}}>See all products →</a>
-      </div>
 
-      <div style={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px'}}>
-        {products.map((product) => (
-          <div key={product.id} style={{
-            backgroundColor: 'white', border: '1.5px solid #E5EBF0', borderRadius: '20px',
-            overflow: 'hidden', cursor: product.comingSoon ? 'default' : 'pointer',
-            transition: 'transform 0.2s, box-shadow 0.2s', opacity: product.comingSoon ? 0.85 : 1,
-          }}
-          onMouseEnter={e => { if (!product.comingSoon) { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,166,153,0.12)'; }}}
-          onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; }}
-          >
-            {/* Product image */}
-            <div style={{height: '180px', background: product.id === 3 ? 'transparent' : product.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '64px', position: 'relative', overflow: 'hidden'}}>
-              {product.image ? (
-                product.id === 3 ? (
-                  <img src={product.image} alt={product.name} style={{width: '100%', height: '100%', objectFit: 'contain', transform: 'rotate(-15deg)'}} />
-                ) : (
-                  <img src={product.image} alt={product.name} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center'}} />
-                )
-              ) : product.emoji}
-
-              {product.comingSoon && (
-                <div style={{position: 'absolute', top: '10px', left: '10px', backgroundColor: '#1A2A35', color: 'white', fontSize: '10px', fontWeight: '700', padding: '3px 10px', borderRadius: '100px', fontFamily: 'sans-serif', textTransform: 'uppercase'}}>
-                  Coming Soon
-                </div>
-              )}
-              {!product.comingSoon && product.badge && (
-                <div style={{position: 'absolute', top: '10px', left: '10px', backgroundColor: product.badgeColor, color: 'white', fontSize: '10px', fontWeight: '700', padding: '3px 8px', borderRadius: '100px', fontFamily: 'sans-serif'}}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+          gap: '28px',
+        }}>
+          {products.map((product) => (
+            <div key={product.id} style={{
+              background: 'white',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+              transition: 'transform 0.2s, box-shadow 0.2s',
+              position: 'relative',
+              border: '1px solid #f0f0f0',
+            }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 2px 12px rgba(0,0,0,0.08)';
+              }}
+            >
+              {/* Badge */}
+              {product.badge && (
+                <div style={{
+                  position: 'absolute', top: '12px', left: '12px',
+                  background: '#FF6B8A', color: 'white',
+                  padding: '4px 10px', borderRadius: '20px',
+                  fontSize: '11px', fontWeight: '700', zIndex: 2,
+                }}>
                   {product.badge}
                 </div>
               )}
-            </div>
-
-            {/* Product body */}
-            <div style={{padding: '16px'}}>
-              <div style={{fontFamily: 'sans-serif', fontSize: '15px', fontWeight: '800', color: '#1A2A35', marginBottom: '6px'}}>{product.name}</div>
-              <div style={{fontSize: '12px', color: '#6B7F8C', marginBottom: '10px', lineHeight: '1.5'}}>{product.desc}</div>
-              {product.comingSoon ? (
-                <div style={{backgroundColor: '#F7F8FA', borderRadius: '8px', padding: '10px 14px', fontSize: '12px', color: '#6B7F8C', fontWeight: '600', textAlign: 'center'}}>
-                  🔔 Notify me when available
+              {!product.available && (
+                <div style={{
+                  position: 'absolute', top: '12px', right: '12px',
+                  background: '#888', color: 'white',
+                  padding: '4px 10px', borderRadius: '20px',
+                  fontSize: '11px', fontWeight: '700', zIndex: 2,
+                }}>
+                  Coming Soon
                 </div>
-              ) : (
-                <>
-                  <div style={{color: '#FFD166', fontSize: '12px', marginBottom: '10px'}}>
-                    {'★'.repeat(product.stars)}{'☆'.repeat(5 - product.stars)}
-                    <span style={{color: '#6B7F8C', marginLeft: '4px'}}>({product.reviews.toLocaleString()})</span>
-                  </div>
-                  <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                    <div style={{fontFamily: 'sans-serif', fontSize: '17px', fontWeight: '900', color: '#00A699'}}>{product.price}</div>
-                    <button
-                      onClick={() => addToCart(product)}
-                      style={{backgroundColor: '#00A699', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '100px', fontSize: '12px', fontWeight: '700', cursor: 'pointer', fontFamily: 'sans-serif'}}>
-                      Add to Cart
-                    </button>
-                  </div>
-                </>
               )}
+
+              {/* Image */}
+              <div style={{
+                width: '100%', height: '220px',
+                background: '#f8f8f8',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                overflow: 'hidden',
+              }}>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+              </div>
+
+              {/* Info */}
+              <div style={{ padding: '16px' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: '700', color: '#1a1a1a', marginBottom: '6px' }}>
+                  {product.name}
+                </h3>
+                <p style={{ fontSize: '13px', color: '#888', marginBottom: '12px', lineHeight: '1.4' }}>
+                  {product.description}
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span style={{ fontSize: '18px', fontWeight: '800', color: '#00A699' }}>
+                    ₦{product.price.toLocaleString()}
+                  </span>
+                  {product.available ? (
+                    <button
+                      onClick={() => handleAdd(product)}
+                      style={{
+                        background: added[product.id] ? '#22c55e' : '#00A699',
+                        color: 'white',
+                        border: 'none',
+                        padding: '8px 16px',
+                        borderRadius: '8px',
+                        fontSize: '13px',
+                        fontWeight: '600',
+                        cursor: 'pointer',
+                        transition: 'background 0.2s',
+                      }}
+                    >
+                      {added[product.id] ? '✓ Added!' : 'Add to Cart'}
+                    </button>
+                  ) : (
+                    <button disabled style={{
+                      background: '#e5e7eb', color: '#9ca3af',
+                      border: 'none', padding: '8px 16px',
+                      borderRadius: '8px', fontSize: '13px',
+                      fontWeight: '600', cursor: 'not-allowed',
+                    }}>
+                      Notify Me
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
