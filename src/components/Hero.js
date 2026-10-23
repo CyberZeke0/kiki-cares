@@ -6,10 +6,8 @@ export default function Hero() {
   return (
     <section style={{ fontFamily: 'Quicksand, sans-serif', overflow: 'hidden' }}>
 
-      {/* Full-width hero image with overlay text */}
       <div style={{ position: 'relative', width: '100%', minHeight: '90vh', background: 'linear-gradient(135deg, #e8f8f7 0%, #fef0f4 100%)', display: 'flex', alignItems: 'center' }}>
 
-        {/* Background decorative circles */}
         <div style={{ position: 'absolute', top: '-100px', right: '-100px', width: '400px', height: '400px', background: 'rgba(0,166,153,0.08)', borderRadius: '50%' }}></div>
         <div style={{ position: 'absolute', bottom: '-80px', left: '-80px', width: '300px', height: '300px', background: 'rgba(255,107,138,0.08)', borderRadius: '50%' }}></div>
 
@@ -38,7 +36,7 @@ export default function Hero() {
               <Link href="#products" style={{ background: '#00A699', color: 'white', padding: '16px 32px', borderRadius: '50px', textDecoration: 'none', fontWeight: '700', fontSize: '16px', display: 'inline-block' }}>
                 Shop All Products
               </Link>
-              <Link href="/pregnancy/due-date-calculator" style={{ background: 'white', color: '#00A699', padding: '16px 32px', borderRadius: '50px', textDecoration: 'none', fontWeight: '700', fontSize: '16px', border: '2px solid #00A699', display: 'inline-block' }}>
+              <Link href="/size-guide" style={{ background: 'white', color: '#00A699', padding: '16px 32px', borderRadius: '50px', textDecoration: 'none', fontWeight: '700', fontSize: '16px', border: '2px solid #00A699', display: 'inline-block' }}>
                 Find My Baby's Size
               </Link>
             </div>
@@ -77,6 +75,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
+
         </div>
       </div>
 
