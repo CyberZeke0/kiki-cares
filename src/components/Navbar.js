@@ -60,7 +60,8 @@ export default function Navbar() {
               { href: '/pregnancy', label: 'Pregnancy' },
               { href: '/parenting', label: 'Parenting' },
               { href: '/why-kiki', label: 'Why Kiki Cares?' },
-              { href: '/account', label: 'My Account' },
+{ href: '/#promise', label: 'Our Promise to Every Baby' },
+{ href: '/account', label: 'My Account' },
             ].map(item => (
               <Link
                 key={item.href}
