@@ -16,7 +16,7 @@ export default function Hero() {
           {/* Text Side */}
           <div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'white', border: '1px solid #e0f5f4', borderRadius: '20px', padding: '6px 16px', marginBottom: '24px', fontSize: '13px', fontWeight: '600', color: '#00A699' }}>
-              🌟 Nigeria's Most Trusted Baby Care
+              Nigeria's Most Trusted Baby Care
             </div>
 
             <h1 style={{ fontSize: 'clamp(36px, 5vw, 60px)', fontWeight: '800', lineHeight: '1.1', color: '#1a1a1a', marginBottom: '20px' }}>
@@ -29,7 +29,7 @@ export default function Hero() {
             </h1>
 
             <p style={{ fontSize: '17px', color: '#555', lineHeight: '1.7', marginBottom: '32px', maxWidth: '480px' }}>
-              Kiki Cares® Diapers are clinically tested, hypoallergenic and engineered for 12-hour leak protection — because every baby deserves the very best.
+              Kiki Cares Diapers are clinically tested, hypoallergenic and engineered for 12-hour leak protection - because every baby deserves the very best.
             </p>
 
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '40px' }}>
@@ -41,22 +41,20 @@ export default function Hero() {
               </Link>
             </div>
 
-            {/* Trust badges */}
             <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
-              {[
-                { icon: '✅', text: 'Dermatologist Tested' },
-                { icon: '🌿', text: 'Chemical Free' },
-                { icon: '💧', text: '12-hr Protection' },
-              ].map(badge => (
-                <div key={badge.text} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: '600', color: '#444' }}>
-                  <span>{badge.icon}</span>
-                  <span>{badge.text}</span>
-                </div>
-              ))}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: '600', color: '#444' }}>
+                <span>Dermatologist Tested</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: '600', color: '#444' }}>
+                <span>Chemical Free</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: '600', color: '#444' }}>
+                <span>12-hr Protection</span>
+              </div>
             </div>
           </div>
 
-          {/* Image Side */}
+          {/* Image Side - hidden on mobile */}
           <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }} className="hero-image">
             <div style={{ width: '100%', maxWidth: '480px', aspectRatio: '4/5', borderRadius: '32px', overflow: 'hidden', boxShadow: '0 24px 60px rgba(0,0,0,0.15)' }}>
               <img
@@ -66,9 +64,7 @@ export default function Hero() {
               />
             </div>
 
-            {/* Floating badge */}
             <div style={{ position: 'absolute', bottom: '24px', left: '-20px', background: 'white', borderRadius: '16px', padding: '16px 20px', boxShadow: '0 8px 24px rgba(0,0,0,0.12)', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ fontSize: '32px' }}>⭐</span>
               <div>
                 <div style={{ fontWeight: '800', fontSize: '18px', color: '#1a1a1a' }}>4.9/5</div>
                 <div style={{ fontSize: '12px', color: '#888' }}>10,000+ Happy Moms</div>
