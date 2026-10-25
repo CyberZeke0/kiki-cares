@@ -14,7 +14,7 @@ export default function CartPage() {
     return (
       <>
         <Navbar />
-        <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', fontFamily: 'sans-serif' }}>
+        <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', fontFamily: 'Quicksand, sans-serif' }}>
           <div style={{ fontSize: '64px' }}>🛒</div>
           <h2 style={{ color: '#333', marginTop: '16px' }}>Your cart is empty</h2>
           <p style={{ color: '#888' }}>Add some products to get started!</p>
@@ -34,13 +34,13 @@ export default function CartPage() {
   return (
     <>
       <Navbar />
-      <div style={{ minHeight: '100vh', background: '#f9f9f9', padding: '40px 20px', fontFamily: 'sans-serif' }}>
+      <div style={{ minHeight: '100vh', background: '#f9f9f9', padding: '40px 16px', fontFamily: 'Quicksand, sans-serif' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <h1 style={{ fontSize: '28px', fontWeight: '700', color: '#222', marginBottom: '32px' }}>
             Shopping Cart ({totalItems} items)
           </h1>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '32px' }}>
+          <div className="cart-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '32px' }}>
 
             {/* Cart Items */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -52,7 +52,7 @@ export default function CartPage() {
                       : <span style={{ fontSize: '32px' }}>🧷</span>
                     }
                   </div>
-                  <div style={{ flex: 1 }}>
+                  <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ fontWeight: '600', color: '#222' }}>{item.name}</div>
                     <div style={{ color: '#00A699', fontWeight: '700', marginTop: '4px' }}>₦{item.price?.toLocaleString()}</div>
                   </div>
@@ -61,7 +61,7 @@ export default function CartPage() {
                     <span style={{ fontWeight: '600', minWidth: '20px', textAlign: 'center' }}>{item.quantity}</span>
                     <button onClick={() => updateQuantity(item.id, item.quantity + 1)} style={{ width: '32px', height: '32px', borderRadius: '50%', border: '1px solid #ddd', background: 'white', cursor: 'pointer' }}>+</button>
                   </div>
-                  <div style={{ textAlign: 'right', minWidth: '100px' }}>
+                  <div style={{ textAlign: 'right', minWidth: '80px' }}>
                     <div style={{ fontWeight: '700', color: '#222' }}>₦{(item.price * item.quantity)?.toLocaleString()}</div>
                     <button onClick={() => removeFromCart(item.id)} style={{ color: '#e53e3e', fontSize: '13px', background: 'none', border: 'none', cursor: 'pointer', marginTop: '4px' }}>Remove</button>
                   </div>
@@ -105,9 +105,19 @@ export default function CartPage() {
                 ← Continue Shopping
               </Link>
             </div>
+
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 767px) {
+          .cart-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
+
       <Footer />
     </>
   );
