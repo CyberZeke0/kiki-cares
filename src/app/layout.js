@@ -1,5 +1,6 @@
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export const metadata = {
   title: "Kiki Cares - Happy Babies, Healthy Tomorrows",
@@ -16,9 +17,11 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body suppressHydrationWarning={true} style={{ fontFamily: "'Quicksand', sans-serif" }}>
-        <CartProvider>
-          {children}
-        </CartProvider>
+        <LanguageProvider>
+          <CartProvider>
+            {children}
+          </CartProvider>
+        </LanguageProvider>
       </body>
     </html>
   );
