@@ -3,26 +3,111 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 
-const menuItems = [
-  { label: 'Diapers', href: '/diapers', children: ['Newborn', 'Baby Soft', 'Overnites', 'Swim', 'Pull-Ups'] },
-  { label: 'Wipes', href: '/wipes', children: ['Pure Water Wipes', 'Baby Wipes'] },
-  { label: 'Offers', href: '/offers', children: [] },
-  { label: 'Pregnancy', href: '/pregnancy', children: ['Due Date Calculator', 'Pregnancy Tips'] },
-  { label: 'Parenting', href: '/parenting', children: ['Newborn Care', 'Toddler Tips'] },
-  { label: 'Why Kiki Cares?', href: '/why-kiki', children: ['Our Promise', 'Ingredients'] },
-  { label: 'Meet the Founder', href: '/founder', children: [] },
-  { label: 'Our Promise', href: '/#promise', children: [] },
+const translations = {
+  EN: {
+    menu: 'Menu',
+    diapers: 'Diapers',
+    wipes: 'Wipes',
+    offers: 'Offers',
+    pregnancy: 'Pregnancy',
+    parenting: 'Parenting',
+    whyKiki: 'Why Kiki Cares?',
+    founder: 'Meet the Founder',
+    promise: 'Our Promise',
+    myProfile: 'My Profile',
+    register: 'Register',
+    language: 'Language',
+    diapersChildren: ['Newborn', 'Baby Soft', 'Overnites', 'Swim', 'Pull-Ups'],
+    wipesChildren: ['Pure Water Wipes', 'Baby Wipes'],
+    pregnancyChildren: ['Due Date Calculator', 'Pregnancy Tips'],
+    parentingChildren: ['Newborn Care', 'Toddler Tips'],
+    whyChildren: ['Our Promise', 'Ingredients'],
+  },
+  ES: {
+    menu: 'Menú',
+    diapers: 'Pañales',
+    wipes: 'Toallitas',
+    offers: 'Ofertas',
+    pregnancy: 'Embarazo',
+    parenting: 'Crianza',
+    whyKiki: '¿Por qué Kiki Cares?',
+    founder: 'Conoce a la Fundadora',
+    promise: 'Nuestra Promesa',
+    myProfile: 'Mi Perfil',
+    register: 'Regístrate',
+    language: 'Idioma',
+    diapersChildren: ['Recién Nacido', 'Baby Soft', 'Noche', 'Natación', 'Pull-Ups'],
+    wipesChildren: ['Toallitas de Agua', 'Toallitas de Bebé'],
+    pregnancyChildren: ['Calculadora de Fecha', 'Consejos de Embarazo'],
+    parentingChildren: ['Cuidado del Recién Nacido', 'Consejos para Niños'],
+    whyChildren: ['Nuestra Promesa', 'Ingredientes'],
+  },
+  FR: {
+    menu: 'Menu',
+    diapers: 'Couches',
+    wipes: 'Lingettes',
+    offers: 'Offres',
+    pregnancy: 'Grossesse',
+    parenting: 'Parentalité',
+    whyKiki: 'Pourquoi Kiki Cares?',
+    founder: 'Rencontrez la Fondatrice',
+    promise: 'Notre Promesse',
+    myProfile: 'Mon Profil',
+    register: "S'inscrire",
+    language: 'Langue',
+    diapersChildren: ['Nouveau-né', 'Baby Soft', 'Nuit', 'Natation', 'Pull-Ups'],
+    wipesChildren: ['Lingettes à l'eau', 'Lingettes bébé'],
+    pregnancyChildren: ['Calculateur de date', 'Conseils grossesse'],
+    parentingChildren: ['Soins nouveau-né', 'Conseils tout-petits'],
+    whyChildren: ['Notre Promesse', 'Ingrédients'],
+  },
+  NL: {
+    menu: 'Menu',
+    diapers: 'Luiers',
+    wipes: 'Doekjes',
+    offers: 'Aanbiedingen',
+    pregnancy: 'Zwangerschap',
+    parenting: 'Ouderschap',
+    whyKiki: 'Waarom Kiki Cares?',
+    founder: 'Ontmoet de Oprichtster',
+    promise: 'Onze Belofte',
+    myProfile: 'Mijn Profiel',
+    register: 'Registreren',
+    language: 'Taal',
+    diapersChildren: ['Pasgeboren', 'Baby Soft', 'Nacht', 'Zwemmen', 'Pull-Ups'],
+    wipesChildren: ['Waterdoekjes', 'Babydoekjes'],
+    pregnancyChildren: ['Bevallingsdatum', 'Zwangerschapstips'],
+    parentingChildren: ['Pasgeborene zorg', 'Peutertips'],
+    whyChildren: ['Onze Belofte', 'Ingrediënten'],
+  },
+};
+
+const langs = [
+  { code: 'EN', label: 'English' },
+  { code: 'ES', label: 'Español' },
+  { code: 'FR', label: 'Français' },
+  { code: 'NL', label: 'Dutch' },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [expanded, setExpanded] = useState(null);
   const [activeLang, setActiveLang] = useState('EN');
+  const [langOpen, setLangOpen] = useState(false);
   const { cartCount } = useCart();
 
-  const toggleExpand = (label) => {
-    setExpanded(expanded === label ? null : label);
-  };
+  const t = translations[activeLang];
+
+  const menuItems = [
+    { label: t.diapers, href: '/diapers', children: t.diapersChildren },
+    { label: t.wipes, href: '/wipes', children: t.wipesChildren },
+    { label: t.offers, href: '/offers', children: [] },
+    { label: t.pregnancy, href: '/pregnancy', children: t.pregnancyChildren },
+    { label: t.parenting, href: '/parenting', children: t.parentingChildren },
+    { label: t.whyKiki, href: '/why-kiki', children: t.whyChildren },
+    { label: t.founder, href: '/founder', children: [] },
+    { label: t.promise, href: '/#promise', children: [] },
+  ];
 
   return (
     <nav style={{ fontFamily: 'Quicksand, sans-serif', position: 'relative', zIndex: 1000 }}>
@@ -73,7 +158,7 @@ export default function Navbar() {
 
             {/* Panel Header */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '18px 20px', borderBottom: '1px solid #eee' }}>
-              <span style={{ fontWeight: '800', fontSize: '16px', color: '#1a1a1a' }}>Menu</span>
+              <span style={{ fontWeight: '800', fontSize: '16px', color: '#1a1a1a' }}>{t.menu}</span>
               <button onClick={() => setMenuOpen(false)} suppressHydrationWarning style={{ background: 'none', border: 'none', fontSize: '22px', cursor: 'pointer', color: '#888' }}>✕</button>
             </div>
 
@@ -85,7 +170,7 @@ export default function Navbar() {
                     {item.label}
                   </Link>
                   {item.children.length > 0 && (
-                    <button onClick={() => toggleExpand(item.label)} suppressHydrationWarning style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '18px', color: '#888', fontWeight: '700' }}>
+                    <button onClick={() => setExpanded(expanded === item.label ? null : item.label)} suppressHydrationWarning style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '18px', color: '#888', fontWeight: '700' }}>
                       {expanded === item.label ? '−' : '+'}
                     </button>
                   )}
@@ -103,37 +188,43 @@ export default function Navbar() {
             {/* Bottom Links */}
             <div style={{ marginTop: '20px', borderTop: '1px solid #eee', padding: '20px 20px 0' }}>
               <Link href="/account" onClick={() => setMenuOpen(false)} style={{ display: 'block', textDecoration: 'none', fontWeight: '700', fontSize: '15px', color: '#00A699', marginBottom: '14px' }}>
-                My Profile
+                {t.myProfile}
               </Link>
               <Link href="/register" onClick={() => setMenuOpen(false)} style={{ display: 'block', textDecoration: 'none', fontWeight: '700', fontSize: '15px', color: '#FF6B8A', marginBottom: '24px' }}>
-                Register
+                {t.register}
               </Link>
 
-              {/* Language Switcher */}
-              <div style={{ borderTop: '1px solid #eee', paddingTop: '20px' }}>
-                <p style={{ fontSize: '11px', color: '#999', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>Language</p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  {[
-                    { code: 'EN', label: 'English' },
-                    { code: 'ES', label: 'Español' },
-                    { code: 'FR', label: 'Français' },
-                    { code: 'NL', label: 'Dutch' },
-                  ].map(lang => (
-                    <button
-                      key={lang.code}
-                      onClick={() => setActiveLang(lang.code)}
-                      suppressHydrationWarning
-                      style={{
-                        background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left',
-                        fontFamily: 'Quicksand, sans-serif', fontSize: '15px', fontWeight: '600',
-                        color: activeLang === lang.code ? '#00A699' : '#444',
-                        padding: '0',
-                      }}
-                    >
-                      {activeLang === lang.code ? '✓ ' : ''}{lang.label}
-                    </button>
-                  ))}
-                </div>
+              {/* Language Dropdown */}
+              <div style={{ borderTop: '1px solid #eee', paddingTop: '20px', position: 'relative' }}>
+                <button
+                  onClick={() => setLangOpen(!langOpen)}
+                  suppressHydrationWarning
+                  style={{ background: 'none', border: '1px solid #ddd', borderRadius: '8px', padding: '10px 14px', cursor: 'pointer', fontFamily: 'Quicksand, sans-serif', fontWeight: '700', fontSize: '14px', color: '#1a1a1a', display: 'flex', alignItems: 'center', gap: '8px', width: '100%', justifyContent: 'space-between' }}
+                >
+                  <span>{langs.find(l => l.code === activeLang)?.label}</span>
+                  <span style={{ fontSize: '10px' }}>{langOpen ? '▲' : '▼'}</span>
+                </button>
+
+                {langOpen && (
+                  <div style={{ border: '1px solid #eee', borderRadius: '8px', marginTop: '6px', overflow: 'hidden', background: 'white', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}>
+                    {langs.map(lang => (
+                      <button
+                        key={lang.code}
+                        onClick={() => { setActiveLang(lang.code); setLangOpen(false); }}
+                        suppressHydrationWarning
+                        style={{
+                          width: '100%', textAlign: 'left', padding: '12px 16px', border: 'none', cursor: 'pointer',
+                          background: activeLang === lang.code ? '#e6f7f6' : 'white',
+                          color: activeLang === lang.code ? '#00A699' : '#444',
+                          fontWeight: '600', fontSize: '14px', fontFamily: 'Quicksand, sans-serif',
+                          borderBottom: '1px solid #f5f5f5',
+                        }}
+                      >
+                        {activeLang === lang.code ? '✓ ' : ''}{lang.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
 
