@@ -17,11 +17,29 @@ const translations = {
     promise: 'Our Promise',
     myProfile: 'My Profile',
     register: 'Register',
-    diapersChildren: ['Newborn', 'Baby Soft', 'Overnites', 'Swim', 'Pull-Ups'],
-    wipesChildren: ['Pure Water Wipes', 'Baby Wipes'],
-    pregnancyChildren: ['Due Date Calculator', 'Pregnancy Tips'],
-    parentingChildren: ['Newborn Care', 'Toddler Tips'],
-    whyChildren: ['Our Promise', 'Ingredients'],
+    diapersChildren: [
+      { label: 'Newborn', href: '/diapers/newborn' },
+      { label: 'Baby Soft', href: '/diapers/baby-soft' },
+      { label: 'Overnites', href: '/diapers/overnites' },
+      { label: 'Swim', href: '/diapers/swim' },
+      { label: 'Pull-Ups', href: '/diapers/pull-ups' },
+    ],
+    wipesChildren: [
+      { label: 'Pure Water Wipes', href: '/wipes/pure-water' },
+      { label: 'Baby Wipes', href: '/wipes/baby' },
+    ],
+    pregnancyChildren: [
+      { label: 'Due Date Calculator', href: '/pregnancy#calculator' },
+      { label: 'Pregnancy Tips', href: '/pregnancy#tips' },
+    ],
+    parentingChildren: [
+      { label: 'Newborn Care', href: '/parenting#newborn' },
+      { label: 'Toddler Tips', href: '/parenting#toddler' },
+    ],
+    whyChildren: [
+      { label: 'Our Promise', href: '/why-kiki#promise' },
+      { label: 'Ingredients', href: '/why-kiki#ingredients' },
+    ],
   },
   ES: {
     menu: 'Menú',
@@ -35,11 +53,29 @@ const translations = {
     promise: 'Nuestra Promesa',
     myProfile: 'Mi Perfil',
     register: 'Regístrate',
-    diapersChildren: ['Recién Nacido', 'Baby Soft', 'Noche', 'Natación', 'Pull-Ups'],
-    wipesChildren: ['Toallitas de Agua', 'Toallitas de Bebé'],
-    pregnancyChildren: ['Calculadora de Fecha', 'Consejos de Embarazo'],
-    parentingChildren: ['Cuidado del Recién Nacido', 'Consejos para Niños'],
-    whyChildren: ['Nuestra Promesa', 'Ingredientes'],
+    diapersChildren: [
+      { label: 'Recién Nacido', href: '/diapers/newborn' },
+      { label: 'Baby Soft', href: '/diapers/baby-soft' },
+      { label: 'Noche', href: '/diapers/overnites' },
+      { label: 'Natación', href: '/diapers/swim' },
+      { label: 'Pull-Ups', href: '/diapers/pull-ups' },
+    ],
+    wipesChildren: [
+      { label: 'Toallitas de Agua', href: '/wipes/pure-water' },
+      { label: 'Toallitas de Bebé', href: '/wipes/baby' },
+    ],
+    pregnancyChildren: [
+      { label: 'Calculadora de Fecha', href: '/pregnancy#calculator' },
+      { label: 'Consejos de Embarazo', href: '/pregnancy#tips' },
+    ],
+    parentingChildren: [
+      { label: 'Cuidado del Recién Nacido', href: '/parenting#newborn' },
+      { label: 'Consejos para Niños', href: '/parenting#toddler' },
+    ],
+    whyChildren: [
+      { label: 'Nuestra Promesa', href: '/why-kiki#promise' },
+      { label: 'Ingredientes', href: '/why-kiki#ingredients' },
+    ],
   },
   FR: {
     menu: 'Menu',
@@ -53,11 +89,29 @@ const translations = {
     promise: 'Notre Promesse',
     myProfile: 'Mon Profil',
     register: "S'inscrire",
-    diapersChildren: ['Nouveau-né', 'Baby Soft', 'Nuit', 'Natation', 'Pull-Ups'],
-    wipesChildren: ["Lingettes à l'eau", 'Lingettes bébé'],
-    pregnancyChildren: ['Calculateur de date', 'Conseils grossesse'],
-    parentingChildren: ['Soins nouveau-né', 'Conseils tout-petits'],
-    whyChildren: ['Notre Promesse', 'Ingrédients'],
+    diapersChildren: [
+      { label: 'Nouveau-né', href: '/diapers/newborn' },
+      { label: 'Baby Soft', href: '/diapers/baby-soft' },
+      { label: 'Nuit', href: '/diapers/overnites' },
+      { label: 'Natation', href: '/diapers/swim' },
+      { label: 'Pull-Ups', href: '/diapers/pull-ups' },
+    ],
+    wipesChildren: [
+      { label: "Lingettes à l'eau", href: '/wipes/pure-water' },
+      { label: 'Lingettes bébé', href: '/wipes/baby' },
+    ],
+    pregnancyChildren: [
+      { label: 'Calculateur de date', href: '/pregnancy#calculator' },
+      { label: 'Conseils grossesse', href: '/pregnancy#tips' },
+    ],
+    parentingChildren: [
+      { label: 'Soins nouveau-né', href: '/parenting#newborn' },
+      { label: 'Conseils tout-petits', href: '/parenting#toddler' },
+    ],
+    whyChildren: [
+      { label: 'Notre Promesse', href: '/why-kiki#promise' },
+      { label: 'Ingrédients', href: '/why-kiki#ingredients' },
+    ],
   },
   NL: {
     menu: 'Menu',
@@ -71,11 +125,29 @@ const translations = {
     promise: 'Onze Belofte',
     myProfile: 'Mijn Profiel',
     register: 'Registreren',
-    diapersChildren: ['Pasgeboren', 'Baby Soft', 'Nacht', 'Zwemmen', 'Pull-Ups'],
-    wipesChildren: ['Waterdoekjes', 'Babydoekjes'],
-    pregnancyChildren: ['Bevallingsdatum', 'Zwangerschapstips'],
-    parentingChildren: ['Pasgeborene zorg', 'Peutertips'],
-    whyChildren: ['Onze Belofte', 'Ingrediënten'],
+    diapersChildren: [
+      { label: 'Pasgeboren', href: '/diapers/newborn' },
+      { label: 'Baby Soft', href: '/diapers/baby-soft' },
+      { label: 'Nacht', href: '/diapers/overnites' },
+      { label: 'Zwemmen', href: '/diapers/swim' },
+      { label: 'Pull-Ups', href: '/diapers/pull-ups' },
+    ],
+    wipesChildren: [
+      { label: 'Waterdoekjes', href: '/wipes/pure-water' },
+      { label: 'Babydoekjes', href: '/wipes/baby' },
+    ],
+    pregnancyChildren: [
+      { label: 'Bevallingsdatum', href: '/pregnancy#calculator' },
+      { label: 'Zwangerschapstips', href: '/pregnancy#tips' },
+    ],
+    parentingChildren: [
+      { label: 'Pasgeborene zorg', href: '/parenting#newborn' },
+      { label: 'Peutertips', href: '/parenting#toddler' },
+    ],
+    whyChildren: [
+      { label: 'Onze Belofte', href: '/why-kiki#promise' },
+      { label: 'Ingrediënten', href: '/why-kiki#ingredients' },
+    ],
   },
 };
 
@@ -132,7 +204,6 @@ export default function Navbar() {
         {/* Right: Lang + Search + Cart */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', position: 'relative' }}>
 
-          {/* Language Button */}
           <div style={{ position: 'relative' }}>
             <button
               onClick={() => setLangOpen(!langOpen)}
@@ -149,13 +220,7 @@ export default function Navbar() {
                     key={l.code}
                     onClick={() => { setLang(l.code); setLangOpen(false); }}
                     suppressHydrationWarning
-                    style={{
-                      width: '100%', textAlign: 'left', padding: '10px 14px', border: 'none', cursor: 'pointer',
-                      background: lang === l.code ? '#e6f7f6' : 'white',
-                      color: lang === l.code ? '#00A699' : '#444',
-                      fontWeight: '600', fontSize: '13px', fontFamily: 'Quicksand, sans-serif',
-                      borderBottom: '1px solid #f5f5f5',
-                    }}
+                    style={{ width: '100%', textAlign: 'left', padding: '10px 14px', border: 'none', cursor: 'pointer', background: lang === l.code ? '#e6f7f6' : 'white', color: lang === l.code ? '#00A699' : '#444', fontWeight: '600', fontSize: '13px', fontFamily: 'Quicksand, sans-serif', borderBottom: '1px solid #f5f5f5' }}
                   >
                     {lang === l.code ? '✓ ' : ''}{l.label}
                   </button>
@@ -201,9 +266,9 @@ export default function Navbar() {
                   )}
                 </div>
                 {expanded === item.label && item.children.map(child => (
-                  <div key={child} style={{ padding: '10px 20px 10px 36px', borderBottom: '1px solid #f9f9f9', background: '#fafafa' }}>
-                    <Link href="#" onClick={() => setMenuOpen(false)} style={{ textDecoration: 'none', fontSize: '14px', color: '#555' }}>
-                      {child}
+                  <div key={child.label} style={{ padding: '10px 20px 10px 36px', borderBottom: '1px solid #f9f9f9', background: '#fafafa' }}>
+                    <Link href={child.href} onClick={() => setMenuOpen(false)} style={{ textDecoration: 'none', fontSize: '14px', color: '#555' }}>
+                      {child.label}
                     </Link>
                   </div>
                 ))}
@@ -217,6 +282,32 @@ export default function Navbar() {
               <Link href="/register" onClick={() => setMenuOpen(false)} style={{ display: 'block', textDecoration: 'none', fontWeight: '700', fontSize: '15px', color: '#FF6B8A', marginBottom: '24px' }}>
                 {t.register}
               </Link>
+
+              <div style={{ borderTop: '1px solid #eee', paddingTop: '20px', position: 'relative' }}>
+                <button
+                  onClick={() => setLangOpen(!langOpen)}
+                  suppressHydrationWarning
+                  style={{ background: 'none', border: '1px solid #ddd', borderRadius: '8px', padding: '10px 14px', cursor: 'pointer', fontFamily: 'Quicksand, sans-serif', fontWeight: '700', fontSize: '14px', color: '#1a1a1a', display: 'flex', alignItems: 'center', gap: '8px', width: '100%', justifyContent: 'space-between' }}
+                >
+                  <span>{langs.find(l => l.code === lang)?.label}</span>
+                  <span style={{ fontSize: '10px' }}>{langOpen ? '▲' : '▼'}</span>
+                </button>
+
+                {langOpen && (
+                  <div style={{ border: '1px solid #eee', borderRadius: '8px', marginTop: '6px', overflow: 'hidden', background: 'white', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}>
+                    {langs.map(l => (
+                      <button
+                        key={l.code}
+                        onClick={() => { setLang(l.code); setLangOpen(false); }}
+                        suppressHydrationWarning
+                        style={{ width: '100%', textAlign: 'left', padding: '12px 16px', border: 'none', cursor: 'pointer', background: lang === l.code ? '#e6f7f6' : 'white', color: lang === l.code ? '#00A699' : '#444', fontWeight: '600', fontSize: '14px', fontFamily: 'Quicksand, sans-serif', borderBottom: '1px solid #f5f5f5' }}
+                      >
+                        {lang === l.code ? '✓ ' : ''}{l.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
