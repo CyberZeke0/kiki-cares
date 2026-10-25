@@ -10,7 +10,8 @@ const menuItems = [
   { label: 'Offers', href: '/offers', children: [] },
   { label: 'Pregnancy', href: '/pregnancy', children: ['Due Date Calculator', 'Pregnancy Tips'] },
   { label: 'Parenting', href: '/parenting', children: ['Newborn Care', 'Toddler Tips'] },
-  { label: 'Why Kiki Cares?', href: '/why-kiki', children: ['Our Promise', 'Ingredients', 'Reviews'] },
+ { label: 'Why Kiki Cares?', href: '/why-kiki', children: ['Our Promise', 'Ingredients'] },
+{ label: 'Meet the Founder', href: '/founder', children: [] },
   { label: 'Our Promise', href: '/#promise', children: [] },
 ];
 

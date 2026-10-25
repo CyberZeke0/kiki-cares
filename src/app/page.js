@@ -2,7 +2,6 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Products from '@/components/Products';
 import WhyKiki from '@/components/WhyKiki';
-import Founder from '@/components/Founder';
 import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
 
@@ -13,7 +12,6 @@ export default function Home() {
       <Hero />
       <Products />
       <WhyKiki />
-      <Founder />
       <Newsletter />
       <Footer />
     </main>
