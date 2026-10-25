@@ -56,7 +56,7 @@ const translations = {
     register: "S'inscrire",
     language: 'Langue',
     diapersChildren: ['Nouveau-né', 'Baby Soft', 'Nuit', 'Natation', 'Pull-Ups'],
-    wipesChildren: ['Lingettes à l'eau', 'Lingettes bébé'],
+   wipesChildren: ["Lingettes à l'eau", 'Lingettes bébé'],
     pregnancyChildren: ['Calculateur de date', 'Conseils grossesse'],
     parentingChildren: ['Soins nouveau-né', 'Conseils tout-petits'],
     whyChildren: ['Notre Promesse', 'Ingrédients'],
