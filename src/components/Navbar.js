@@ -37,8 +37,8 @@ const translations = {
       { label: 'Toddler Tips', href: '/parenting#toddler' },
     ],
     whyChildren: [
-      { label: 'Our Promise', href: '/why-kiki#promise' },
-      { label: 'Ingredients', href: '/why-kiki#ingredients' },
+      { label: 'Our Promise', href: '/why-kiki-cares#promise' },
+      { label: 'Ingredients', href: '/why-kiki-cares#ingredients' },
     ],
   },
   ES: {
@@ -73,8 +73,8 @@ const translations = {
       { label: 'Consejos para Niños', href: '/parenting#toddler' },
     ],
     whyChildren: [
-      { label: 'Nuestra Promesa', href: '/why-kiki#promise' },
-      { label: 'Ingredientes', href: '/why-kiki#ingredients' },
+      { label: 'Nuestra Promesa', href: '/why-kiki-cares#promise' },
+      { label: 'Ingredientes', href: '/why-kiki-cares#ingredients' },
     ],
   },
   FR: {
@@ -109,8 +109,8 @@ const translations = {
       { label: 'Conseils tout-petits', href: '/parenting#toddler' },
     ],
     whyChildren: [
-      { label: 'Notre Promesse', href: '/why-kiki#promise' },
-      { label: 'Ingrédients', href: '/why-kiki#ingredients' },
+      { label: 'Notre Promesse', href: '/why-kiki-cares#promise' },
+      { label: 'Ingrédients', href: '/why-kiki-cares#ingredients' },
     ],
   },
   NL: {
@@ -145,8 +145,8 @@ const translations = {
       { label: 'Peutertips', href: '/parenting#toddler' },
     ],
     whyChildren: [
-      { label: 'Onze Belofte', href: '/why-kiki#promise' },
-      { label: 'Ingrediënten', href: '/why-kiki#ingredients' },
+      { label: 'Onze Belofte', href: '/why-kiki-cares#promise' },
+      { label: 'Ingrediënten', href: '/why-kiki-cares#ingredients' },
     ],
   },
 };
@@ -173,9 +173,9 @@ export default function Navbar() {
     { label: t.offers, href: '/offers', children: [] },
     { label: t.pregnancy, href: '/pregnancy', children: t.pregnancyChildren },
     { label: t.parenting, href: '/parenting', children: t.parentingChildren },
-    { label: t.whyKiki, href: '/why-kiki', children: t.whyChildren },
+    { label: t.whyKiki, href: '/why-kiki-cares', children: t.whyChildren },
     { label: t.founder, href: '/founder', children: [] },
-    { label: t.promise, href: '/#promise', children: [] },
+    { label: t.promise, href: '/why-kiki-cares#promise', children: [] },
   ];
 
   return (
@@ -241,7 +241,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Dropdown Menu */}
+      {/* Slide-out Menu */}
       {menuOpen && (
         <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 999 }}>
           <div onClick={() => setMenuOpen(false)} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.4)' }} />
@@ -279,7 +279,7 @@ export default function Navbar() {
               <Link href="/account" onClick={() => setMenuOpen(false)} style={{ display: 'block', textDecoration: 'none', fontWeight: '700', fontSize: '15px', color: '#00A699', marginBottom: '14px' }}>
                 {t.myProfile}
               </Link>
-              <Link href="/register" onClick={() => setMenuOpen(false)} style={{ display: 'block', textDecoration: 'none', fontWeight: '700', fontSize: '15px', color: '#FF6B8A', marginBottom: '24px' }}>
+              <Link href="/signup" onClick={() => setMenuOpen(false)} style={{ display: 'block', textDecoration: 'none', fontWeight: '700', fontSize: '15px', color: '#FF6B8A', marginBottom: '24px' }}>
                 {t.register}
               </Link>
 

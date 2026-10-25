@@ -34,7 +34,7 @@ export default function PregnancyPage() {
             Pregnancy Guide
           </h1>
           <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.9)', maxWidth: '500px', margin: '0 auto', lineHeight: '1.7' }}>
-            Everything you need for a healthy, happy pregnancy in Nigeria.
+            Everything you need for a healthy, happy pregnancy.
           </p>
         </div>
 
