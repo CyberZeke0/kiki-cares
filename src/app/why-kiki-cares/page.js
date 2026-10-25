@@ -15,7 +15,7 @@ const certifications = [
   },
   {
     name: 'ECOCERT Certified',
-    img: '/ecocert.png',
+    img: '/ecocert.jpg',
     color: '#F7B731',
     desc: 'Certified by ECOCERT — the global standard for organic and natural products. Clean ingredients, responsibly sourced.',
   },
