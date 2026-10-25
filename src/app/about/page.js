@@ -10,7 +10,7 @@ export default function AboutPage() {
         <div style={{ background: '#00A699', padding: '80px 24px', textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: '900', color: 'white', marginBottom: '16px' }}>About Kiki Cares</h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', maxWidth: '540px', margin: '0 auto', lineHeight: '1.7' }}>
-            Born in Nigeria. Built for African babies. Driven by love.
+            Born in Baltimore, USA . Made for Every baby. Driven by love.
           </p>
         </div>
 

@@ -162,6 +162,8 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [expanded, setExpanded] = useState(null);
   const [langOpen, setLangOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const { cartCount } = useCart();
   const { lang, setLang } = useLang();
 
@@ -204,6 +206,7 @@ export default function Navbar() {
         {/* Right: Lang + Search + Cart */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', position: 'relative' }}>
 
+          {/* Language Switcher */}
           <div style={{ position: 'relative' }}>
             <button
               onClick={() => setLangOpen(!langOpen)}
@@ -229,12 +232,19 @@ export default function Navbar() {
             )}
           </div>
 
-          <button suppressHydrationWarning style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="11" cy="11" r="8" />
-    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-  </svg>
-</button>
+          {/* Search */}
+          <button
+            onClick={() => setSearchOpen(!searchOpen)}
+            suppressHydrationWarning
+            style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
+
+          {/* Cart */}
           <Link href="/cart" style={{ position: 'relative', textDecoration: 'none', fontSize: '18px' }}>
             🛒
             {cartCount > 0 && (
@@ -245,6 +255,26 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
+
+      {/* Search Bar */}
+      {searchOpen && (
+        <div style={{ background: 'white', borderBottom: '1px solid #eee', padding: '10px 16px', display: 'flex', gap: '8px' }}>
+          <input
+            autoFocus
+            type="text"
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+            placeholder="Search products..."
+            style={{ flex: 1, border: '1px solid #ddd', borderRadius: '8px', padding: '10px 14px', fontFamily: 'Quicksand, sans-serif', fontSize: '14px', outline: 'none' }}
+          />
+          <button
+            suppressHydrationWarning
+            style={{ background: '#00A699', color: 'white', border: 'none', borderRadius: '8px', padding: '10px 16px', cursor: 'pointer', fontWeight: '700', fontFamily: 'Quicksand, sans-serif' }}
+          >
+            Go
+          </button>
+        </div>
+      )}
 
       {/* Slide-out Menu */}
       {menuOpen && (
